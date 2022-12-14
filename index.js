@@ -12,8 +12,13 @@ moment.updateLocale('en', null);
 /*First Test wirh Pupperteer in JavaScript and Copie the secong part in Oanda, so i want copie the principal input conver */
 console.log("Incio de Busqueda");
 
+
+
     PageWeb.PageWeb(); // Costa Rica Uruguay
-    PageChile.PageChile();
+    PageChile.PageChile()
     PagePeru.PagePeru();
     PageColombia.PageColombia();
     ExcelScript.PageExcel();
+
+    
+   

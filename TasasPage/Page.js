@@ -17,8 +17,6 @@ const randomUseragent = require('random-useragent');
         return pgTag.innerHTML;
     });
     
-
-
     let procesado
     procesado = grabParagraphBancoCr.replace(/\s+/g," ");
     console.log("Banco Costa Rica", procesado);

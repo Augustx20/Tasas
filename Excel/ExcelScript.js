@@ -8,7 +8,7 @@ const PageHonduras = require('../TasasHonduras/Honduras')
 const PageExcel = async () => {
     
     let hoy = moment().format('dddd');
-    let fechaexacta = moment('2022-11-29').add(7, 'days').format('dddd');
+    let fechaexacta = moment('2022-11-28').add(7, 'days').format('dddd');
     
     if (hoy == fechaexacta){
         console.log("son el mismo dia");
