@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
 
-
+const Miarray = []
 const PageColombia = async () => {
     /* Banco Colombia */
     
@@ -23,6 +23,8 @@ const PageColombia = async () => {
     procesad = grabParagraphBANCOco.replace(/\s+/g," ");
 
     console.log("Banco colombia", procesad);
+
+    Miarray.push(procesad);
 
     /* EURCOP */
     setTimeout(async function()  {
@@ -128,5 +130,6 @@ console.log("Proceso Terminado")
 }
 
 module.exports = {
-    PageColombia
+    PageColombia,
+    Miarray,
 }
