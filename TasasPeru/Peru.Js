@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
 
 
-const PagePeru = async () => {
+const BancoPeruUSD = async () => {
 
 
 /* Banco  Peru Usd*/
@@ -20,9 +20,15 @@ const grabParagraphBancoPeruUsd= await page.evaluate(() =>{
 });
 
 console.log("Banco Peru", grabParagraphBancoPeruUsd);
+await browser.close()
 
+}
+const BancoPeruEur = async () => {
 
 /* Banco Peru Eur*/
+const header = randomUseragent.getRandom()
+const browser = await puppeteer.launch({heandless: false });
+const page = await browser.newPage();   
 await page.setUserAgent(header)
 await page.goto("https://www.sbs.gob.pe/app/pp/SISTIP_PORTAL/Paginas/Publicacion/TipoCambioPromedio.aspx");
 await page.setViewport({ width: 1920, height: 1080 });
@@ -108,8 +114,7 @@ console.log("Banco Peru " + numero);
 }
 
 
-
-
 module.exports = {
-PagePeru
+    BancoPeruUSD,
+    BancoPeruEur,
 }
