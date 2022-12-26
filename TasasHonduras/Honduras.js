@@ -10,6 +10,7 @@ const PageHonduras = async () => {
         const page = await browser.newPage();
         await page.setUserAgent(header)
         await page.goto("https://www.oanda.com/currency-converter/es/?from=USD&to=HNL&amount=1");
+        page.setDefaultNavigationTimeout(0);
         await page.setViewport({ width: 1920, height: 1080 });
         await page.screenshot({path: '15-Tasa BRLHNL.png'});
         

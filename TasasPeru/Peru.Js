@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
+const Numero = require('../Valores/valores')
 
 
 const BancoPeruUSD = async () => {
-
 
 /* Banco  Peru Usd*/
 const header = randomUseragent.getRandom()
@@ -11,6 +11,7 @@ const browser = await puppeteer.launch({heandless: false });
 const page = await browser.newPage();   
 await page.setUserAgent(header)
 await page.goto("https://www.sbs.gob.pe/app/pp/SISTIP_PORTAL/Paginas/Publicacion/TipoCambioPromedio.aspx");
+page.setDefaultNavigationTimeout(0);
 await page.setViewport({ width: 1920, height: 1080 });
 await page.screenshot({path: '02-Banco Peru.png'});
 
@@ -20,7 +21,9 @@ const grabParagraphBancoPeruUsd= await page.evaluate(() =>{
 });
 
 console.log("Banco Peru", grabParagraphBancoPeruUsd);
-await browser.close()
+await browser.close();
+Numero.ArrayVar.push(grabParagraphBancoPeruUsd)
+
 
 }
 const BancoPeruEur = async () => {
@@ -31,6 +34,7 @@ const browser = await puppeteer.launch({heandless: false });
 const page = await browser.newPage();   
 await page.setUserAgent(header)
 await page.goto("https://www.sbs.gob.pe/app/pp/SISTIP_PORTAL/Paginas/Publicacion/TipoCambioPromedio.aspx");
+page.setDefaultNavigationTimeout(0);
 await page.setViewport({ width: 1920, height: 1080 });
 await page.screenshot({path: 'BancoPeur.png'});
 
@@ -111,6 +115,7 @@ switch (TasaEur) {
 let numero = Miarray.pop();
 console.log("Banco Peru " + numero);
 
+Numero.ArrayVar.push(numero)
 }
 
 

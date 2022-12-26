@@ -1,10 +1,12 @@
 const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
+const Excel = require('../Excel/ExcelScript')
+const Numero = require('../Valores/valores')
 
 const BancoUruguayUSD = async () => {
     /* Banco Uruguay*/
+
     const ArrayUY = []
-    try {
         const header = randomUseragent.getRandom()
         const browser = await puppeteer.launch({heandless: false });
         const page = await browser.newPage();
@@ -21,14 +23,15 @@ const BancoUruguayUSD = async () => {
         //console.log("Banco Uruguay", grabParagraphBancoUru);
         ArrayUY.push(grabParagraphBancoUru);
             
-    } catch (error) {
-            console.error(error);    
-            }
+   
     
             await browser.close()
 
 let valor = ArrayUY[0];
-console.log("Banco Uruguay" + valor);
+console.log("Banco Uruguay " + valor);
+
+
+Numero.ArrayVar.push(valor)
 }
 
 

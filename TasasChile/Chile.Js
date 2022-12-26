@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
+const Numero = require('../Valores/valores')
 
 
 const BancoChileUSD = async () => {
@@ -21,6 +22,7 @@ const BancoChileUSD = async () => {
 
     console.log("Banco Chile", grabParagraphBancoChileUsd);
     await browser.close()
+    Numero.ArrayVar.push(grabParagraphBancoChileUsd)
 
 }
 
@@ -41,6 +43,7 @@ const BancoChileEUR = async () => {
 
     console.log("Banco Chile", grabParagraphBancoChileEur);
     await browser.close()
+    Numero.ArrayVar.push(grabParagraphBancoChileEur)
 }
 
 const OandaChileUSD = async () => {
@@ -58,6 +61,7 @@ const grabParagraphUSDCLP= await page.evaluate(() =>{
 })
 console.log("USD/CLP", grabParagraphUSDCLP);
 await browser.close()
+Numero.ArrayVar.push(grabParagraphUSDCLP)
 }
 
 /* EURCLP */
@@ -68,6 +72,7 @@ const OandaChileEUR = async () => {
     const page = await browser.newPage();
     await page.setUserAgent(header)
     await page.goto("https://www.oanda.com/currency-converter/es/?from=EUR&to=CLP&amount=1");
+    page.setDefaultNavigationTimeout(25);
     await page.setViewport({ width: 1200, height:750 });
     await page.screenshot({path: '14-Tasa EURCLP.png'});
 
@@ -78,6 +83,7 @@ const grabParagraphEURCLP= await page.evaluate(() =>{
 console.log("EUR/CLP", grabParagraphEURCLP);
 
 await browser.close()
+Numero.ArrayVar.push(grabParagraphEURCLP)
 
 }
  

@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const randomUseragent = require('random-useragent');
+const Numero = require('../Valores/valores')
 
  const BancoCostaRica = async () => {
 
@@ -9,6 +10,7 @@ const randomUseragent = require('random-useragent');
     const page = await browser.newPage();
     await page.setUserAgent(header)
     await page.goto("https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
+    page.setDefaultNavigationTimeout(0);
     await page.setViewport({ width: 1920, height: 1080 });
     await page.screenshot({path: '04-Banco Costa Rica.png'});
     
@@ -21,6 +23,8 @@ const randomUseragent = require('random-useragent');
     procesado = grabParagraphBancoCr.replace(/\s+/g," ");
     console.log("Banco Costa Rica", procesado);
     await browser.close()
+
+Numero.ArrayVar.push(procesado)
 }
 module.exports ={
 
