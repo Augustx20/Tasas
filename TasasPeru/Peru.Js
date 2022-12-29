@@ -61,7 +61,7 @@ try {
 }
 try {
    const grabParagraphPeLineaTex8Eur = await page.evaluate(() =>{
-       const pgTag =                      document.querySelector("#ctl00_cphContent_rgTipoCambio_ctl00__8 > td.APLI_fila3");
+       const pgTag = document.querySelector("#ctl00_cphContent_rgTipoCambio_ctl00__8 > td.APLI_fila3");
        return pgTag.innerHTML;
       });
       Miarray2.push(grabParagraphPeLineaTex8Eur)    

@@ -1,7 +1,9 @@
 const Excel = require('../Excel/ExcelScript')
 const ArrayVar = []
 setTimeout(() => {
+
     console.log(ArrayVar.length);
+
     // let PEEUR = ArrayVar[0];
     // let PEUSD = ArrayVar[1];
     // let UYUT = ArrayVar[7];
@@ -39,7 +41,6 @@ setTimeout(() => {
 
     //     }
     // ]
-
     // Excel.saveExcel(data)
 
 console.log("Proceso Terminado")

@@ -1,33 +1,20 @@
-const { opts } = require('excel4node/distribution/lib/types/borderStyle');
-const ExcelJS = require('exceljs')
-const xlsx = require('xlsx')
+// const { opts } = require('excel4node/distribution/lib/types/borderStyle');
+// const ExcelJS = require('exceljs')
+// const xlsx = require('xlsx')
 
-var wb = xlsx.readFile('Exchange.xlsx');
+// var wb = xlsx.readFile('Exchange.xlsx');
 
-var ws = wb.Sheets['Oanda'];
+// var ws = wb.Sheets['Oanda'];
 
-var worksheet =  {
-    "!ref": "A1:A3",
-    A1: { t:'n', v:1 },
-    A2: { t:'n', v:2 },
-    A3: { t:'n', v:3, f:'A1+A2' }
-  };
-  xlsx.utils.sheet_set_array_formula(worksheet);
+// var worksheet =  {
+//     "!ref": "A1:A3",
+//     A1: { t:'n', v:1 },
+//     A2: { t:'n', v:2 },
+//     A3: { t:'n', v:3, f:'A1+A2' }
+//   };
+//   xlsx.utils.sheet_set_array_formula(worksheet);
 
-xlsx.writeFile(wb,'Exchange.xlsx',opts)
-
-
-
-
-
-
-
-
-
-
-
-
-
+// xlsx.writeFile(wb,'Exchange.xlsx',opts)
 
 
 

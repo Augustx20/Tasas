@@ -1,16 +1,12 @@
 const puppeteer = require('puppeteer');
-const randomUseragent = require('random-useragent');
 const Numero = require('../Valores/valores')
-
 
 const BancoChileUSD = async () => {
     
-
     /* Banco Chile  Usd*/
-    const header = randomUseragent.getRandom()
+
     const browser = await puppeteer.launch({heandless: false });
     const page = await browser.newPage();
-    await page.setUserAgent(header)
     await page.goto("https://si3.bcentral.cl/Indicadoressiete/secure/Indicadoresdiarios.aspx");
     await page.setViewport({ width: 1920, height: 1080 });
     await page.screenshot({path: '02-Banco Chile.png'});
@@ -29,10 +25,8 @@ const BancoChileUSD = async () => {
 const BancoChileEUR = async () => {
 
 /* Banco Chile  Eur*/
-    const header = randomUseragent.getRandom()
     const browser = await puppeteer.launch({heandless: false });
     const page = await browser.newPage();
-    await page.setUserAgent(header)
     await page.goto("https://si3.bcentral.cl/Indicadoressiete/secure/Indicadoresdiarios.aspx");
     await page.setViewport({ width: 1920, height: 1080 });
 
@@ -47,10 +41,9 @@ const BancoChileEUR = async () => {
 }
 
 const OandaChileUSD = async () => {
-    const header = randomUseragent.getRandom()
-    const browser = await puppeteer.launch({heandless: false });
-    const page = await browser.newPage();
-await page.setUserAgent(header)
+    
+const browser = await puppeteer.launch({heandless: false });
+const page = await browser.newPage();
 await page.goto("https://www.oanda.com/currency-converter/es/?from=USD&to=CLP&amount=1");
 await page.setViewport({ width: 1200, height:750 });
 await page.screenshot({path: '13-Tasa USDCLP.png'});
@@ -67,16 +60,14 @@ Numero.ArrayVar.push(grabParagraphUSDCLP)
 /* EURCLP */
 
 const OandaChileEUR = async () => {
-    const header = randomUseragent.getRandom()
     const browser = await puppeteer.launch({heandless: false });
     const page = await browser.newPage();
-    await page.setUserAgent(header)
     await page.goto("https://www.oanda.com/currency-converter/es/?from=EUR&to=CLP&amount=1");
     page.setDefaultNavigationTimeout(25);
     await page.setViewport({ width: 1200, height:750 });
     await page.screenshot({path: '14-Tasa EURCLP.png'});
 
-const grabParagraphEURCLP= await page.evaluate(() =>{
+    const grabParagraphEURCLP= await page.evaluate(() =>{
     const pgTag = document.querySelector("#cc-time-series-plot > div > div > div:nth-child(2) > div > table > tbody > tr:nth-child(2) > td:nth-child(3)");
     return pgTag.innerHTML;
 })
