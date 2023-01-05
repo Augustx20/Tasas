@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1",
     "excel4node": "^1.8.0",
     "exceljs": "^4.3.0",
     "install": "^0.13.0",
+    "jsontoxml": "^1.0.1",
     "moment": "^2.29.4",
     "node": "^19.2.0",
     "node.js": "^0.0.1-security",
@@ -14,7 +16,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
     "url": "https://github.com/Augustx20/Tasas/issues"
   },
   "homepage": "https://github.com/Augustx20/Tasas#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  }
 }
